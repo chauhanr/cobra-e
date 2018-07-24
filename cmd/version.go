@@ -1,0 +1,28 @@
+package cmd
+
+import (
+	"github.com/spf13/cobra"
+	"fmt"
+)
+
+var versionCmd = &cobra.Command{
+	Use: "version",
+	Short: "version of command",
+	Long: `This command specifies the version of the cli`,
+	Run: func(cmd *cobra.Command, args []string){
+		fmt.Println("app version : 0.1")
+	},
+}
+
+func init(){
+	RootCmd.AddCommand(versionCmd)
+	// Here you will define your flags and configuration settings.
+
+	// Cobra supports Persistent Flags which will work for this command
+	// and all subcommands, e.g.:
+	// byeCmd.PersistentFlags().String("foo", "", "A help for foo")
+
+	// Cobra supports local flags which will only run when this command
+	// is called directly, e.g.:
+	// byeCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}
